@@ -108,8 +108,8 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
   tree->current = tree->root; 
 
   while(tree->current!= NULL){
-    if(is_equal(tree,key,tree->current->pair)){ 
-      return tree->current->pair; 
+    if(is_equal(tree,key,tree->current->pair->key)){ 
+      return tree->current->pair->key; 
     }
     else if(tree->lower_than( key, tree->current->pair->key)==0){ //derecha
       tree->current = tree->current->right;
