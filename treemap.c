@@ -38,12 +38,56 @@ TreeNode * createTreeNode(void* key, void * value) {
 
 TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
-    //new->lower_than = lower_than;
-    return NULL;
+    TreeMap * new = malloc(sizeof(TreeMap*));
+    new->lower_than = lower_than;
+    new->root= NULL; 
+    new->current = NULL; 
+    return new;
 }
 
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
+  /*comparar la claved del elemento a insertar con la clave del nodo raíz si es mayor va a la derecha si es menor va a la izquierda, si llegamos al final y no encontramos debemos reservar memoria */
+  
+  // ver los elemnetos que igresan a función (clave)
+  TreeNode* nuevoNodo = createTreeMap(int (*lower_than)(void *, void *)); 
+
+  if(tree->root == NULL){
+    map->root = nuevoNodo; 
+    map->current = nuevoNodo; 
+    
+  }
+  else{
+    //recorrer la estructura 
+    TreeNode *current = map->root; 
+    while(true){
+      if(key < current->key){//nuevo nodod debiese ir a la izq MENOR
+        if(current->left == NULL) current->left = nuevoNodo; 
+        else if(){
+          
+        }
+      
+      }
+      else if(key > current->key){// si nuevo nodo es MAYOR al current y clave 
+        if(current->right == NULL) current->right = nuevoNodo; 
+        else if (){
+          
+        }
+        
+      }
+      else{// si la clave ya existe en este caso debemos sobreescribir o no hacer alguna acción
+        return; 
+      }    
+    }
+    
+  }
+    
+
+
+  
+
+
+  
 
 }
 
@@ -70,6 +114,9 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
+
+
+  
     return NULL;
 }
 

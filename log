@@ -2,3 +2,38 @@ Fri 21 Apr 2023 01:01:11 AM UTC:
  tests:  1|8
 total_score: 0/70
 3198880
+Fri 21 Apr 2023 12:58:21 PM UTC: 
+ treemap.c | 48 ++++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 46 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:53:39: error: expected expression before ‘int’
+   53 |   TreeNode* nuevoNodo = createTreeMap(int (*lower_than)(void *, void *));
+      |                                       ^~~
+treemap.c:56:5: error: ‘map’ undeclared (first use in this function)
+   56 |     map->root = nuevoNodo;
+      |     ^~~
+treemap.c:56:5: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:63:11: error: ‘true’ undeclared (first use in this function)
+   63 |     while(true){
+      |           ^~~~
+In file included from test.c:4:
+treemap.c:5:1: note: ‘true’ is defined in header ‘<stdbool.h>’; did you forget to ‘#include <stdbool.h>’?
+    4 | #include "treemap.h"
+  +++ |+#include <stdbool.h>
+    5 | 
+In file included from test.c:4:
+treemap.c:64:23: error: ‘TreeNode’ has no member named ‘key’
+   64 |       if(key < current->key){//nuevo nodod debiese ir a la izq MENOR
+      |                       ^~
+treemap.c:66:17: error: expected expression before ‘)’ token
+   66 |         else if(){
+      |                 ^
+treemap.c:71:28: error: ‘TreeNode’ has no member named ‘key’
+   71 |       else if(key > current->key){// si nuevo nodo es MAYOR al current y clave
+      |                            ^~
+treemap.c:73:18: error: expected expression before ‘)’ token
+   73 |         else if (){
+      |                  ^
+Compilation failed
+7119ae9
