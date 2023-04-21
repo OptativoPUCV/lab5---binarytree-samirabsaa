@@ -103,9 +103,6 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 }
 
-
-
-
 Pair * searchTreeMap(TreeMap * tree, void* key) {
   
   tree->current = tree->root; 
@@ -120,8 +117,8 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     else if (tree->lower_than(key, tree->current->pair->key)==1){ //izquierda
       tree->current= tree->current->left;  
     }
-
-    return NULL;  
+    tree->current = NULL; 
+    return 0;  
 }
 
 
