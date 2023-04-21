@@ -118,9 +118,9 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
       tree->current= tree->current->left;  
     }
 
-    return NULL;
-    //tree->current = NULL; 
-    //return 0;  
+  }
+  
+    return NULL; 
 }
 
 
