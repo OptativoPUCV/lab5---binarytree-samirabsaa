@@ -54,13 +54,13 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   TreeNode* nuevoNodo = createTreeMap(int (*lower_than)(void * key, void * value)); 
 
   if(tree->root == NULL){
-    map->root = nuevoNodo; 
-    map->current = nuevoNodo; 
+    tree->root = nuevoNodo; 
+    tree->current = nuevoNodo; 
     
   }
   else{
     //recorrer la estructura 
-    TreeNode *current = map->root; 
+    TreeNode *current = tree->root; 
     while(true){
       if(key < current->key){//nuevo nodod debiese ir a la izq MENOR
         if(current->left == NULL) current->left = nuevoNodo; 
