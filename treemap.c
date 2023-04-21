@@ -75,7 +75,8 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         tree->current= tree->current->left;
       }//caso de no existir clave se reserva memoria
       else if(!searchTreeMap(tree, key)){
-        tree->current->pair->value =  nuevoNodo;
+        tree->current->left =  nuevoNodo;
+        nuevoNodo->parent= tree->current;
       }
       else{ //caso de ser iguales
         return;
