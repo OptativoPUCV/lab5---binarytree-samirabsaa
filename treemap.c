@@ -60,9 +60,8 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     tree->current = tree->root;
     
     while(true){ 
-      //caso de existir y ser igual
+      //caso de existir y ser igual, se puede sobreescribir o hacer nada
       if(is_equal(tree, key, tree->current->pair->key)){
-        //se puede sobreescribir o hacer nada
         return; 
       }
       
@@ -84,19 +83,13 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         tree->current= tree->current->left;
         
       }
-      {
+
+      /*{  //caso de no existir clave se debe agregar nodo
         tree->current->left =  nuevoNodo;
         nuevoNodo->parent= tree->current;
         break;
-      }
-      /*else{ //caso de no existir clave se debe agregar nodo 
-        //tree->current->left =  nuevoNodo;
-        //nuevoNodo->parent= tree->current;
-        //break;
-        }
-      */
+      }*/
     }
-    
   } 
 }
 
