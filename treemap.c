@@ -122,9 +122,9 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
       tree->current= tree->current->right;  
     }
 
-    return NULL; 
-  //tree->current = NULL;
-  //return 0; 
+    //return NULL; 
+  tree->current = NULL;
+  return 0; 
 }
 
 
