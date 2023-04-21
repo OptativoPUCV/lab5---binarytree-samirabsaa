@@ -85,12 +85,14 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
       }
       
       //else{ //caso de no existir clave se debe agregar nodo 
-        tree->current->left =  nuevoNodo;
-        nuevoNodo->parent= tree->current;
+        //tree->current->left =  nuevoNodo;
+        //nuevoNodo->parent= tree->current;
         //break;
         
       //}
     }
+    tree->current->left =  nuevoNodo;
+    nuevoNodo->parent= tree->current;
   } 
 }
 
