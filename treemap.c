@@ -48,10 +48,7 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-  /*comparar la claved del elemento a insertar con la clave del nodo raíz si es mayor va a la derecha si es menor va a la izquierda, si llegamos al final y no encontramos debemos reservar memoria */
-  
-  // ver los elemnetos que igresan a función (clave)
-  
+  /*comparar la clave del elemento a insertar con la clave del nodo raíz si es mayor va a la derecha si es menor va a la izquierda, si llegamos al final y no encontramos debemos reservar memoria */
   TreeNode* nuevoNodo = createTreeNode(key,value); 
 
   if(tree->root == NULL){
@@ -60,21 +57,43 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     
   }
   else{
-    //recorrer la estructura 
+    tree->current = tree->root;
+    while(true){
+      if(key < tree->current->pair->key){
+        if(tree->current->left==NULL){
+          tree->current->left = nuevoNodo; 
+          break; 
+        }
+        tree->current= tree->current->left; 
+      }
+      else if(key > tree->current->pair->key){
+        if(tree->current->right==NULL){
+          tree->current->right = nuevoNodo; 
+          break; 
+        }
+        tree->current= tree->current->right;
+        
+      }
+      else{
+        return;
+      }
+    }
+
+    
+  }
+
+
+  /*else{ //hacer búsqueda la estructura nuevo_dato y  
     TreeNode *current = tree->root; 
     while(true){
       if(key < current->pair->key){//nuevo nodod debiese ir a la izq MENOR
         if(current->left == NULL) current->left = nuevoNodo; 
-        else if(){
-          
-        }
-      
       }
       else if(key > current->pair->key){// si nuevo nodo es MAYOR al current y clave 
         if(current->right == NULL) current->right = nuevoNodo; 
-        else if (){
+        //else if (){
           
-        }
+        //}
         
       }
       else{// si la clave ya existe en este caso debemos sobreescribir o no hacer alguna acción
@@ -83,7 +102,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     }
     
   }
-}
+}*/
 
 TreeNode * minimum(TreeNode * x){
 
