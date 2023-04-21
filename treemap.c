@@ -58,29 +58,27 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   else{
     tree->current = tree->root;
     while(true){
-      if(key < tree->current->pair->key){
-        if(tree->current->left==NULL){
-          tree->current->left = nuevoNodo; 
-          break; 
-        }
-        tree->current= tree->current->left; 
-      }
-      else if(key > tree->current->pair->key){
+      if(tree->lower_than(key,tree->current->pair->key)==0){
         if(tree->current->right==NULL){
           tree->current->right = nuevoNodo; 
           break; 
         }
-        tree->current= tree->current->right;
+        tree->current= tree->current->right; 
+      }
+      else if(tree->lower_than(key, tree->current->pair->key)){
+        if(tree->current->left==NULL){
+          tree->current->left = nuevoNodo; 
+          break; 
+        }
+        tree->current= tree->current->left;
         
       }
       else{
         return;
       }
     }
-  }
-
-    
-  }
+  } 
+}
 
 
   /*else{ //hacer búsqueda la estructura nuevo_dato y  
