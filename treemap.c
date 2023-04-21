@@ -111,20 +111,17 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
   tree->current = tree->root; 
 
   while(tree->current!= NULL){
-      if(is_equal(tree,key,tree->current->pair->key)){ 
-        return tree->current->pair->key; 
-      }
-
-    if(tree->lower_than( key, tree->current->pair->key)==0){//derecha
-            tree->current = tree->current->right;
+    if(is_equal(tree,key,tree->current->pair->key)){ 
+      return tree->current->pair->key; 
+    }else if(tree->lower_than( key, tree->current->pair->key)==0){       //derecha
+      tree->current = tree->current->right;
     }
-    else{
-      tree->current= tree->current->right;  
+    else if (tree->lower_than(key, tree->current->pair->key)==1){
+      //izquierda
+      tree->current= tree->current->left;  
     }
 
-    return NULL; 
-  //tree->current = NULL;
-  //return 0; 
+    return NULL;  
 }
 
 
