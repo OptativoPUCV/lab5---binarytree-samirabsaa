@@ -65,6 +65,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
           break; 
         }
         tree->current= tree->current->right; 
+        
       }
       else if(tree->lower_than(key, tree->current->pair->key)==0){ //menor
         if(tree->current->left==NULL){
@@ -73,14 +74,17 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
           break; 
         }
         tree->current= tree->current->left;
+        
       }//caso de existir y ser igual
       else if(is_equal(tree, key, tree->current->pair->key)){
         tree->current->pair->value = value; 
         return;
+        
       }
       else{ //caso de no existir clave se debe agregar nodo 
         tree->current->left =  nuevoNodo;
         nuevoNodo->parent= tree->current;
+        return;
         
       }
     }
