@@ -126,11 +126,11 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       tree->root = NULL;
     }
     free(node);
-  }//CASO 3 -> NODO CON DOS HIJOS
-  else{
-    
-    
   }
+
+//CASO 3 -> NODO CON DOS HIJOS
+  
+  
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
