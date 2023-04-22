@@ -145,8 +145,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   }
 }
   
-
-
 void eraseTreeMap(TreeMap * tree, void* key){
     if (tree == NULL || tree->root == NULL) return;
 
@@ -183,7 +181,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
 
-  //caso base 
-  //if(tree == NULL)return NULL;
+  caso base 
+  if(tree == NULL)return NULL;
     return NULL;
 }
