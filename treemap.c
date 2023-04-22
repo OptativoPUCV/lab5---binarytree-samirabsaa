@@ -59,7 +59,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   else{
     tree->current = tree->root;
     
-    while(tree->root!=NULL){ 
+    while(tree->current!=NULL){ 
       //caso de existir y ser igual, se puede sobreescribir o hacer nada
       if(is_equal(tree, key, tree->current->pair->key)){
         tree->current->pair->value = value; 
