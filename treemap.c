@@ -99,6 +99,22 @@ TreeNode * minimum(TreeNode * x){
 void removeNode(TreeMap * tree, TreeNode* node) {
 
 //CASO 1 -> NODO SIN HIJOS 
+  if(node->left==NULL && node->right == NULL){
+    if(node->parent!= NULL){
+      if(node == node->parent->left){
+        node->parent->left = NULL; 
+      }
+      else{
+        node->parent->right= NULL; 
+      }
+    }
+    else{
+      tree->root = NULL;
+    }
+    free(node);
+  }
+  
+  
 
 //CASO 2 -> NODO CON UN HIJO 
 
