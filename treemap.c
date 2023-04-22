@@ -190,7 +190,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
 
   //caso base 
-  //if(tree == NULL)return NULL;
+  if(tree == NULL)return NULL;
   
-    return NULL;
+    //return NULL;
 }
