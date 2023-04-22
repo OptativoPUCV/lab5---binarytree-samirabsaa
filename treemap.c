@@ -181,7 +181,8 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
 
-  caso base 
+  //caso base 
   if(tree == NULL)return NULL;
+  
     return NULL;
 }
