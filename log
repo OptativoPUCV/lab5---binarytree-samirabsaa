@@ -848,3 +848,12 @@ Sat 22 Apr 2023 06:03:45 PM UTC:
  1 file changed, 11 insertions(+), 8 deletions(-)
  tests:  0|0
 1ab00b8
+Sat 22 Apr 2023 06:04:31 PM UTC: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+treemap.c:148:1: error: expected identifier or ‘(’ before ‘}’ token
+  148 | }
+      | ^
+Compilation failed
+cf11b0e
