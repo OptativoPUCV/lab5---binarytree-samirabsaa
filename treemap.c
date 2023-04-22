@@ -176,13 +176,21 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-    return NULL;
+
+  TreeNode * node = tree->root; 
+  Pair *aux = NULL; 
+
+  while(node != NULL){
+    aux = node->pair;
+    node = node->left;
+  }
+    return aux;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
 
   //caso base 
-  if(tree == NULL)return NULL;
+  //if(tree == NULL)return NULL;
   
     return NULL;
 }
