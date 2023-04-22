@@ -134,8 +134,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       } 
     }
 
-    node = NULL;
     free(node);
+    node->parent = NULL;
+    
   } 
     
   //else{ //CASO 3 -> NODO CON DOS HIJOS
