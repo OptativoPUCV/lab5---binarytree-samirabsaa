@@ -128,22 +128,18 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         node->parent->right = node->left;
       }  
     }
-    free(node);
-  }
     else{
-      //if(node->left!= NULL){
-        //tree->root= node->left; 
-      //}
-      //else{
-        //tree->root = node->right;
-      //}
       tree->root = NULL;
     }
+      
     free(node);
   }
+  //else{ //CASO 3 -> NODO CON DOS HIJOS
+     
+  //}
 
-//CASO 3 -> NODO CON DOS HIJOS
-  
+
+}
   
 
 
