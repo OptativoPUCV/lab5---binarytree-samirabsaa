@@ -95,7 +95,6 @@ TreeNode * minimum(TreeNode * x){
   
 }
 
-
 void removeNode(TreeMap * tree, TreeNode* node) {
 
 //CASO 1 -> NODO SIN HIJOS 
@@ -128,16 +127,16 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       else{
         node->parent->right = node->left;
       }
-      
+      free(node);
     }
     else{
-      if(node->left!= NULL){
-        tree->root= node->left; 
-      }
-      else{
-        tree->root = node->right;
-      }
-      //tree->root = NULL;
+      //if(node->left!= NULL){
+        //tree->root= node->left; 
+      //}
+      //else{
+        //tree->root = node->right;
+      //}
+      tree->root = NULL;
     }
     free(node);
   }
@@ -182,5 +181,8 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+
+  //caso base 
+  //if(tree == NULL)return NULL;
     return NULL;
 }
