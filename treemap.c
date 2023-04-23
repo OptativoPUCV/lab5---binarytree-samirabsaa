@@ -196,11 +196,11 @@ Pair * nextTreeMap(TreeMap * tree) {
   //caso base 
   if(current == NULL)return NULL;
   else{
-    current=current->right;
-    if(current != NULL){
-      aux->key = minimum(current);
+    current = current->right;
+    //if(current != NULL){
+    aux->key = minimum(current);
       //return aux->key;   
-    }
+    //}
   }
   return aux->key;
   //return NULL;
