@@ -212,7 +212,7 @@ Pair * nextTreeMap(TreeMap * tree) {
       }
       current = aux; 
     }
-    return current->pair; 
+    return current->pair->key; 
   }
 
 }
