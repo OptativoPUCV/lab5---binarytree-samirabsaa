@@ -114,7 +114,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }
     free(node);
   }//CASO 2 -> NODO CON UN HIJO 
-  else if(node->left == NULL || node->right == NULL){
+  else if((node->left == NULL && node->right != NULL) || (node->left != NULL && node->right == NULL)){
     
     if(node->left!= NULL){ //IZQUIERDA
       node = node->left;
@@ -124,7 +124,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       node->parent->left = node->right; 
     }
 
-    /*if(node->right != NULL){ //DERECHA
+    if(node->right != NULL){ //DERECHA
       node = node->right; 
       node->parent->right = node->right; 
     }
@@ -133,7 +133,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }
     
     free(node); 
-    node = NULL; */
+    node = NULL; 
 
   }
   else{ //CASO 3 -> NODO CON DOS HIJOS
