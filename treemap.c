@@ -193,8 +193,7 @@ Pair * nextTreeMap(TreeMap * tree) {
   //retorna el siguiente PAIR a partir del TreeNode * current
   //actualizar current 
 
-  TreeNode * current = tree->root;
-  //minimum(tree->root); 
+  TreeNode * current = minimum(tree->root); 
   
   //CASO BASE
   if(current == NULL)return NULL;
