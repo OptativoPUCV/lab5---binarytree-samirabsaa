@@ -202,8 +202,8 @@ Pair * nextTreeMap(TreeMap * tree) {
   if(current != NULL){
     current = current->right;
     if(current  != NULL){
-      aux = minimum(current);
-      return aux;
+      aux->value = minimum(current);
+      return aux->value;
     } 
   }
   return NULL;
