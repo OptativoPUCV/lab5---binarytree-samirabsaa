@@ -192,18 +192,19 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
   //retorna el siguiente PAIR a partir del TreeNode * current
   //actualizar current 
-  TreeNode * current = tree->root;
-  Pair * aux = NULL; 
-  
-  //caso base 
-  if(current == NULL)return NULL;
-  else{
+
+  //CASO BASE
+  if(tree->root == NULL)return NULL;
+
+   TreeNode * current = tree->root;
+    Pair * aux = NULL; 
+
+  if(current != NULL){
     current = current->right;
-    //if(current != NULL){
-    aux->key = minimum(current);
-      //return aux->key;   
-    //}
+    if(current  != NULL){
+      aux->key = minimum(current);
+      return aux;
+    } 
   }
-  return aux->key;
-  //return NULL;
+  return NULL;
 }
