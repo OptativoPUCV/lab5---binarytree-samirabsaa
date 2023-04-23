@@ -202,6 +202,6 @@ Pair * nextTreeMap(TreeMap * tree) {
       //return aux->key;   
     }
   }
-  return aux;
+  return aux->key;
   //return NULL;
 }
